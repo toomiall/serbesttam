@@ -1,0 +1,725 @@
+/* ====== HTML ümumi scroll davranışı ====== */
+html {
+    scroll-behavior: smooth; /* Linkə klik edəndə səhifə yumşaq aşağı/yuxarı gedir */
+}
+
+/* ====== Bütün elementləri reset edir ====== */
+* {
+    margin: 0; /* bütün marginləri (xarici boşluq) sıfırlayır */
+    padding: 0; /* bütün iç boşluqları sıfırlayır */
+    box-sizing: border-box;   /* elementin ölçüsü padding + border daxil hesablanır (daha rahat layout üçün) */
+}
+
+/* ====== Bütün saytın əsas fonu və fontu ====== */
+body {
+    font-family: Arial, sans-serif; /* yazı tipi */
+    background-color: #f3f4f6; /* açıq boz fon */
+}
+
+/* ================= HEADER (yuxarı hissə) ================= */
+header {
+    display: flex;  /* elementləri yan-yana düzür (logo + menu) */
+    justify-content: space-between; /* solda logo, sağda menu */
+    align-items: center;  /* şaquli ortalama */
+    padding: 20px 60px;  /* yuxarı-aşağı 20px, sağ-sol 60px boşluq */
+    background-color: white; /* ağ fon */
+    box-shadow: 0 0 10px rgba(0,0,0,0.08); /* yumşaq kölgə (kart kimi görünür) */
+}
+
+/* ====== LOGO ====== */
+.logo {
+    font-size: 30px; /* böyük yazı */
+    font-weight: bold; /* qalın */
+    color: #5b3df5; /* bənövşəyi rəng */
+}
+
+/* ================= NAV MENU LINKLƏRİ ================= */
+nav a {
+    display: inline-flex;  /* icon + text yan-yana */
+    align-items: center; /* şaquli ortalama */
+    gap: 7px;  /* icon ilə text arasında məsafə */
+    text-decoration: none; /* alt xətti silir */
+    margin-left: 25px; /* linklər arası boşluq */
+    color: #333; /* tünd boz rəng */
+    font-size: 17px;
+    transition: 0.3s; /* hover animasiya */
+}
+
+/* hover (mouse üstə gələndə) */
+nav a:hover {
+    color: #5b3df5; /* rəng dəyişir */
+}
+
+/* aktiv səhifə */
+.active {
+    background-color: #5b3df5; /* fon rəngi */
+    color: white; /* yazı rəngi */
+    padding: 10px 18px; /* iç boşluq */
+    border-radius: 10px; /* kənarları yumrulaşdırır */
+}
+
+/* ================= SEARCH BOX ================= */
+.axtaris-yeri {
+    padding: 30px 60px 15px; /* boşluqlar */
+    display: flex; /* input + button yan-yana */
+    gap: 15px; /* aralarında boşluq */
+}
+
+/* input (yazı yazılan hissə) */
+.axtaris-yeri input {
+    width: 100%; /* tam genişlik */
+    padding: 18px; /* iç boşluq */
+    border: 1px solid #ddd; /* incə border */
+    border-radius: 12px; /* yumru kənar */
+    font-size: 16px;
+}
+
+/* search button */
+.axtaris-yeri button {
+    padding: 15px 25px; /* ölçü */
+    border: none; /* border yox */
+    background-color: #5b3df5; /* bənövşəyi */
+    color: white; /* icon ağ */
+    border-radius: 10px;
+}
+
+/* hover effekti */
+.axtaris-yeri button:hover {
+    background-color: #4528d6; /* tünd bənövşəyi */
+}
+
+/* “tapılmadı” mesajı */
+#notFound {
+    color: red; /* qırmızı xəbərdarlıq */
+    padding-left: 60px;
+    margin-bottom: 20px;
+    display: none; /* default gizlidir */
+}
+
+/* ================= KATEQORİYALAR ================= */
+.categories {
+    display: flex; /* yan-yana */
+    gap: 10px; /* aralıq */
+    padding: 10px 60px 30px;
+}
+
+/* kateqoriya düymələri */
+.categories a {
+    padding: 10px 20px; /* button ölçüsü */
+    border: 1px solid #ddd; /* incə border */
+    background-color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+/* hover effekti */
+.categories a:hover {
+    background-color: #5b3df5;
+    color: white;
+}
+
+/* aktiv kateqoriya */
+.active-btn {
+    background-color: #5b3df5; 
+    /* digər stilləri overwrite edir */
+    color: white;
+}
+
+/* ================= CARDS (MƏQALƏ KARTLARI) ================= */
+.cards {
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);   /* 1-ci sətirdə 3 kart */
+  gap:20px;
+  padding:0 60px 60px;
+}
+
+
+/* hər card */
+.card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden; /* şəkil kənardan çıxmasın */
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+
+/* hover effekti */
+.card:hover {
+    transform: translateY(-8px); /* yuxarı qalxır */
+}
+
+/* şəkil */
+.card img {
+    width: 100%;
+    height: 230px;
+}
+
+/* şəkil hover zoom */
+.card img:hover {
+    transform: scale(1.05);
+}
+
+/* kart içi content */
+.card-content {
+    padding: 20px;
+}
+
+/* kateqoriya etiketi */
+.card-content span {
+    background-color: #ece9ff;
+    color: #5b3df5;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* başlıq */
+.card-content h3 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    line-height: 35px;
+    font-size: 30px;
+}
+
+/* mətn */
+.card-content p {
+    color: gray;
+    line-height: 26px;
+}
+
+/* ================= SEKIL PAGE ================= */
+.sekil-page {
+    width: 80%; /* səhifə eni */
+    margin: 40px auto; /* ortalama */
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* geri düyməsi üst hissə */
+.top-bar {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+/* geri button */
+.back-btn {
+    text-decoration: none;
+    background: #5145ff;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+/* sekil şəkli */
+.sekil-page img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+/* başlıq */
+h1 {
+    color: #071c3d;
+    margin-bottom: 20px;
+}
+
+/* paragraph */
+p {
+    line-height: 1.9;
+    color: #444;
+    font-size: 18px;
+}
+
+/* ================= SHARE BOX ================= */
+.share-box {
+    margin-top: 40px;
+    background: #f7f7f7;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+/* share button container */
+.share-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* share linklər */
+.share-buttons a {
+    text-decoration: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+}
+
+/* sosial rənglər */
+.facebook { background: #1877f2; }
+.instagram { background: #e1306c; }
+.whatsapp { background: #25d366; }
+.kopyala { background: gray; }
+
+/* ================= FOOTER ================= */
+footer {
+    background-color: #111827;
+    color: white;
+    margin-top: 60px;
+}
+
+/* footer əsas hissə */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 60px;
+    flex-wrap: wrap;
+}
+
+/* logo hissə */
+.footer-logo {
+    width: 300px;
+}
+
+/* footer başlıq */
+.footer-logo h2 {
+    margin-bottom: 15px;
+    color: #8b5cf6;
+}
+
+/* footer text */
+.footer-logo p {
+    line-height: 26px;
+    color: #d1d5db;
+}
+
+/* linklər */
+.footer-links {
+    display: flex;
+    flex-direction: column;
+}
+
+/* link */
+.footer-links a {
+    text-decoration: none;
+    color: #d1d5db;
+    margin-bottom: 10px;
+}
+
+/* hover */
+.footer-links a:hover {
+    color: #8b5cf6;
+}
+
+/* contact */
+.footer-contact p {
+    margin-bottom: 10px;
+    color: #d1d5db;
+}
+
+/* footer alt hissə */
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #374151;
+    color: #9ca3af;
+}
+
+/* ================= CARD STATS ================= */
+.card-stats {
+    display: flex;
+    gap: 15px;
+    color: #6c757d;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+/* müəllif */
+.muellif-adi {
+    margin-top: 10px;
+}
+
+/* müəllif adı */
+.muellif-adi h4 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #212529;
+}  
+/* ================= ƏMİNƏNİN ƏLAVƏ ETDİYİ CSS KODLARI ================= */
+
+/* Populyar səhifəsinin başlığı və konteyneri */
+.container { 
+    width: 90%; 
+    margin: auto; 
+}
+.title { 
+    margin-top: 50px; 
+    margin-bottom: 40px; 
+    font-size: 50px; 
+    color: #111827; 
+}
+
+/* Kartların içindəki kateqoriya və ikonlar (baxış və ürək) */
+.category {
+    background: #eef2ff;
+    color: #4f46e5;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.card-icons { 
+    margin-top: 20px; 
+    color: gray; 
+}
+.card-icons span { 
+    margin-right: 20px; 
+}
+
+/* ================= ƏMİNƏNİN MƏQALƏ İÇİ (DETAL) SƏHİFƏLƏRİ ================= */
+/* kvant.html, ai.html və s. oxuma səhifələri üçün */
+
+.article {
+    width: 60%;
+    margin: auto;
+    margin-top: 40px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.article-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.article-content {
+    padding: 30px;
+}
+.top {
+    margin-bottom: 25px;
+}
+.time {
+    margin-left: 15px;
+    color: gray;
+}
+.article-title {
+    font-size: 38px;
+    line-height: 1.4;
+}
+.author-box {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.author-left {
+    float: left;
+}
+.author-icon {
+    width: 55px;
+    height: 55px;
+    background: #4f46e5;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    line-height: 55px;
+    float: left;
+    margin-right: 15px;
+    font-size: 24px;
+}
+.author-info {
+    float: left;
+}
+.author-info h3 {
+    margin: 0;
+}
+.author-info p {
+    margin-top: 5px;
+    color: gray;
+}
+.article-icons {
+    float: right;
+    margin-top: 15px;
+    color: gray;
+}
+.article-icons span {
+    margin-left: 20px;
+    font-size: 20px;
+}
+.text {
+    margin-top: 35px;
+}
+.text p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #374151;
+}
+
+/* Paylaşım düymələri (Əminənin üsulu) */
+.share {
+    margin-top: 40px;
+    background: #f5f5f5;
+    padding: 25px;
+    border-radius: 10px;
+}
+.share h2 {
+    margin-bottom: 25px;
+}
+.share a {
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin-right: 10px;
+    display: inline-block;
+}
+.facebook { background: #1877f2; }
+.twitter { background: #1da1f2; }
+.linkedin { background: #0a66c2; }
+.whatsapp { background: #25d366; }
+.copy { background: #374151; }
+
+.back-top {
+    width: 90%;
+    margin: 25px auto;
+}
+.back-top a {
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+    color: #4f46e5;
+}
+/* ================= KATEQORİYA SƏHİFƏSİ ÜÇÜN KODLAR ================= */
+
+.konteyner {
+    width: 1200px;        
+    margin: 60px auto;      
+    padding: 0 20px;
+}
+
+.basliq {
+    font-size: 32px;
+    font-weight: bold;
+    color: #111827;
+    margin-bottom: 35px;
+}
+
+.kartlar-sahesi {
+    text-align: left;      
+}
+
+.kart {
+    display: inline-block; 
+    vertical-align: top;
+    width: 360px;          
+    height: 230px;
+    margin-right: 20px;    
+    margin-bottom: 24px;   
+    padding: 24px;
+    border-radius: 16px;
+    text-decoration: none;
+    color: #ffffff;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.kart:hover {
+    transform: scale(1.03); /* Üzərinə gələndə yüngülcə böyümə effekti */
+}
+
+.kart h3, .kart p {
+    position: relative;
+    z-index: 2;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.627); /* Yazılar şəklin üstündə aydın oxunsun deyə kölgə */
+}
+
+.kart h3 {
+    margin-top: 130px;   
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.kart p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: white;
+}
+
+/* Kartların arxa fon şəkilləri */
+.texno {
+    background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600');
+    background-color: #0056b3;
+}
+.biznes {
+    background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=600');
+    background-color: #222222;
+}
+.elm {
+    background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600');
+    background-color: #111111;
+}
+.senet {
+    background-image: url('https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=600');
+    background-color: #8a2be2;
+}
+.seyahet {
+    background-image: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600');
+    background-color: #b45309;
+}
+/* ================= PROFİL SƏHİFƏSİ ÜÇÜN KODLAR ================= */
+
+.profile-card {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.profile-header {
+  background-color: #3b82f6; /* Qəşəng mavi arxa fon */
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  background: #fff;
+  color: #8b5cf6;
+  font-size: 36px;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+}
+
+.subtitle {
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.stat-box {
+  background: #f9fafb;
+  padding: 15px 25px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.stat-box .number {
+  display: block;
+  font-size: 22px;
+  font-weight: bold;
+  color: #111827;
+}
+
+.stat-box span {
+  color: #6b7280;
+}
+
+.about {
+  padding: 20px;
+}
+
+.about h3 {
+  margin-bottom: 10px;
+  color: #4b0082;
+}
+
+.about p {
+  color: #555;
+  line-height: 1.5;
+}
+
+.buttons {
+  text-align: center;
+  padding: 20px;
+}
+
+.buttons button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s; /* Düymələrin üzərinə gələndə rəngi yumşaq dəyişsin */
+}
+
+.message {
+  background: #8b5cf6;
+  color: #fff;
+}
+
+.message:hover {
+  background: #6d28d9;
+}
+
+.follow {
+  background: #facc15;
+  color: #111827;
+}
+
+.follow:hover {
+  background: #eab308;
+}
+
+.recent-articles {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.recent-articles h3 {
+  margin-bottom: 20px;
+  color: #4b0082;
+}
+
+.article-card {
+  display: flex;
+  align-items: center;
+  background: #f9fafb;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.article-card .thumb img {
+  width: 120px;
+  height: 100px; /* Şəkil çərçivədən daşmasın deyə sabit hündürlük */
+  object-fit: cover;
+}
+
+.article-info {
+  padding: 15px;
+}
+
+.article-info h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.article-info .meta {
+  font-size: 14px;
+  color: #6b7280;
+}

@@ -1,0 +1,269 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="az"> <!-- Səhifənin dili azərbaycancadır -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Azərbaycan dili simvollarını düzgün göstərir -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Saytı telefon və kompüterdə uyğun göstərmək üçün -->
+
+    <title>Məqalə Platforması</title> <!-- Brauzer tabında görünən ad -->
+
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS faylı qoşulur (dizayn buradan gəlir) -->
+</head>
+
+<body>
+
+    <!-- ================= HEADER (saytın yuxarı hissəsi) ================= -->
+    <header>
+
+        <div class="logo">
+            <!-- Saytın loqosu / adı -->
+            📖 Məqalə
+        </div>
+
+        <nav>
+            <a href="index.html" class="active">🏠 Ana Səhifə</a>
+            <a href="populyar.html">⚡ Populyar</a>
+            <a href="kateqoriya.html">☰ Kateqoriya</a>
+            <a href="haqqimizda.html">ⓘ Haqqımızda</a>
+            <a href="profil.html">○ Profil</a>
+        </nav>
+
+    </header>
+
+    <!-- ================= AXTARIŞ HİSSƏSİ ================= -->
+    <div class="axtaris-yeri">
+
+        <!-- İstifadəçi məqalə axtarır -->
+        <input type="text" id="searchInput" placeholder="Məqalələrdə axtar...">
+
+        <!-- Axtar düyməsi -->
+        <button onclick="yoxla()">
+            🔍︎
+            <!-- klik ediləndə JavaScript funksiyası işləyir -->
+        </button>
+
+    </div>
+
+    <!-- Axtarış nəticəsi tapılmadıqda göstərilən mesaj -->
+    <p id="notFound">
+        Məqalə tapılmadı
+    </p>
+
+    <!-- ================= KATEQORİYALAR ================= -->
+    <div class="categories">
+
+        <!-- Filtr üçün kateqoriyalar -->
+        <a href="#all" class="active-btn">Hamısı</a>
+        <a href="#technology">Texnologiya</a>
+        <a href="#business">Biznes</a>
+        <a href="#science">Elm</a>
+        <a href="#art">Sənət</a>
+        <a href="#travel">Səyahət</a>
+
+    </div>
+
+    <!-- ================= MƏQALƏ KARTLARI ================= -->
+    <section class="cards">
+        <!-- Bütün məqalə kartları burada yerləşir -->
+
+        <!-- ===== CARD 1 ===== -->
+        <a href="sekil1.html" class="card" id="technology">
+            <!-- klik ediləndə article1.html açılır -->
+
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop">
+            <!-- məqalənin şəkli -->
+
+            <div class="card-content">
+
+                <span>Texnologiya</span>
+                <!-- kateqoriya etiketi -->
+
+                <h3>Süni İntellektin Gələcəyi və İnsan Həyatına Təsiri</h3>
+                <!-- məqalə başlığı -->
+
+                <p>Süni intellekt texnologiyaları sürətlə inkişaf edir...</p>
+                <!-- qısa mətn -->
+
+                <div class="card-stats">
+                    <!-- statistik məlumatlar -->
+
+                    <span>🕒 12 dəq</span> <!-- oxuma vaxtı -->
+                    <span>👁️ 5620</span>   <!-- baxış sayı -->
+                    <button onclick="artir()">❤️</button>
+                    <p id="like">0</p>     <!-- like sayı -->
+
+                </div>
+
+                <div class="muellif-adi">
+                    <!-- müəllif adı -->
+                    <h4>Tərifə Əzizli</h4>
+                </div>
+
+            </div>
+        </a>
+
+        <!-- ===== CARD 2 ===== -->
+        <a href="sekil2.html" class="card" id="business">
+
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="card-content">
+
+                <span>Biznes</span>
+                <h3>Startapların Uğur Sirrləri: Nəyə Diqqət Etməli?</h3>
+                <p>Müasir biznes dünyasında startapların uğurlu olması...</p>
+
+                <div class="card-stats">
+                    <span>🕒 7 dəq</span>
+                    <span>👁️ 1520</span>
+                    <button onclick="artir()">❤️</button>
+                    <p id="like">0</p> 
+                </div>
+
+                <div class="muellif-adi">
+                    <h4>Əminə Çələbi</h4>
+                </div>
+
+            </div>
+        </a>
+
+        <!-- ===== CARD 3 ===== -->
+        <a href="sekil3.html" class="card" id="science">
+
+            <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="card-content">
+
+                <span>Elm</span>
+                <h3>Kvant Kompüterləri və Yeni Texnologiyalar</h3>
+                <p>Kvant hesablamaları gələcəyin texnologiyasıdır...</p>
+
+                <div class="card-stats">
+                    <span>🕒 5 dəq</span>
+                    <span>👁️ 2847</span>
+                    <button onclick="artir()">❤️</button>
+                    <p id="like">0</p> 
+                </div>
+
+                <div class="muellif-adi">
+                    <h4>İsmayıl Bayramlı</h4>
+                </div>
+
+            </div>
+        </a>
+
+        <!-- ===== CARD 4 ===== -->
+        <a href="sekil4.html" class="card" id="art">
+
+            <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="card-content">
+                
+
+                <span>Sənət</span>
+                <h3>Müasir İncəsənət və Yaradıcılıq Dünyası</h3>
+                <p>Müasir sənət fərqli düşüncə formaları yaradır...</p>
+
+                <div class="card-stats">
+                    <span>🕒 10 dəq</span>
+                    <span>👁️ 4310</span>
+                    <button onclick="artir()">❤️</button>
+                    <p id="like">0</p> 
+                </div>
+
+                <div class="muellif-adi">
+                    <h4>Şahin Kərimov</h4>
+                </div>
+
+            </div>
+        </a>
+
+        <!-- ===== CARD 5 ===== -->
+        <a href="sekil5.html" class="card" id="travel">
+
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="card-content">
+
+                <span>Səyahət</span>
+                <h3>Dünyanı Gəzməyin İnsan Həyatına Təsiri</h3>
+                <p>Səyahət yen i mədəniyyətlər kəşf etməyə kömək edir...</p>
+
+                <div class="card-stats">
+                    <span>🕒 6 dəq</span>
+                    <span>👁️ 1890</span>
+                    <button onclick="artir()">❤️</button>
+                    <p id="like">0</p> 
+                </div>
+
+                <div class="muellif-adi">
+                    <h4>Simran Muradlı</h4>
+                </div>
+
+            </div>
+        </a>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+
+        <div class="footer-content">
+
+            <div class="footer-logo">
+                <!-- sayt haqqında hissə -->
+                <h2>Məqalə</h2>
+                <p>Maraqlı məqalələri oxu və yeni məlumatlar kəşf et.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>🔗 Keçidlər</h3>
+                <a href="index.html">Ana Səhifə</a>
+                <a href="kateqoriya.html">Kateqoriyalar</a>
+                <a href="populyar.html">Populyar</a>
+                <a href="profil.html">Profil</a>
+                <a href="haqqimizda.html">Haqqımızda</a>
+            </div>
+
+            <div class="footer-contact">
+                <!-- əlaqə məlumatı -->
+                <h3>📞 Əlaqə</h3>
+                <p>Email: aztu.meqale@gmail.com</p>
+                <p>Telefon: +994 50 111 22 33</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <!-- copyright -->
+            <p>2026 Məqalə Platforması | Bütün hüquqlar qorunur</p>
+        </div>
+
+    </footer>
+    
+<script>
+
+function yazdir() {
+
+let x = document.getElementById("ad").value;
+document.getElementById("netice").innerHTML = x;
+}
+</script>
+
+<script>
+
+function artir(){
+let say = document.getElementById("like").innerHTML;
+
+say++;
+
+document.getElementById("like").innerHTML = say;
+
+}
+
+</script>
+</body>
+</html>

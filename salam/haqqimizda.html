@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haqqımızda - Məqalə Platforması</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .haqqimizda-main {
+            padding: 50px 20px;
+        }
+
+        .haqqimizda-container {
+            max-width: 1100px;
+            margin: auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Kölgəni bir az yumşaltdım ki, daha müasir görünsün */
+        }
+
+        .haqqimizda-container .title {
+            font-size: 28px;
+            font-weight: bold;
+            color: darkblue;
+            margin-bottom: 15px;
+        }
+
+        .haqqimizda-container .text {
+            font-size: 15px;
+            line-height: 1.7;
+            color: gray;
+            margin-bottom: 40px;
+        }
+
+        .haqqimizda-container .stats {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .haqqimizda-container .stat h2 {
+            font-size: 32px;
+            color: blue;
+            margin-bottom: 6px;
+        }
+
+        .haqqimizda-container .stat p {
+            font-size: 14px;
+            color: gray;
+        }
+
+        .haqqimizda-container hr {
+            margin-bottom: 30px;
+            border: none;
+            border-top: 1px solid #eee; /* Xəttin görünməsi üçün açıq boz rəng */
+        }
+
+        .haqqimizda-container .contact-title {
+            font-size: 20px;
+            color: darkblue;
+            margin-bottom: 20px;
+        }
+
+        .haqqimizda-container .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-size: 14px;
+            color: gray;
+        }
+
+        .haqqimizda-container .icon {
+            color: blue;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            📖 Məqalə
+        </div>
+        <nav>
+            <a href="index.html">🏠 Ana Səhifə</a>
+            <a href="populyar.html">⚡ Populyar</a>
+            <a href="kateqoriya.html">☰ Kateqoriya</a>
+            <a href="haqqimizda.html" class="active">ⓘ Haqqımızda</a>
+            <a href="profil.html">○ Profil</a>
+        </nav>
+    </header>
+
+    <main class="haqqimizda-main">
+        <div class="haqqimizda-container">
+            <h1 class="title">Haqqımızda</h1>
+            <p class="text">
+                Meqale.az, Azərbaycanda ən geniş məqalə platformalarından biridir. Bizim məqsədimiz, müxtəlif sahələrdə
+                dərin və keyfiyyətli məqalələr təqdim edərək, oxucularımıza məlumatlı və əyləncəli bir təcrübə
+                təmin etməkdir. Müxtəlif mövzularda yazılmış məqalələrimizlə, hər kəsin maraq dairəsinə uyğun bir şey
+                tapacağına inanırıq. Məqalələrimiz, peşəkar müəlliflər tərəfindən hazırlanır və oxucularımıza ən son
+                məlumatları və dərin analizləri təqdim edir. Meqale.az, həmçinin müəlliflər üçün də bir platforma
+                olaraq fəaliyyət göstərir, onların fikirlərini paylaşmalarına və geniş bir auditoriyaya çatmalarına
+                imkan verir.
+            </p>
+            
+            <div class="stats">
+                <div class="stat">
+                    <h2>500+</h2>
+                    <p>Məqalə</p>
+                </div>
+                <div class="stat">
+                    <h2>50+</h2>
+                    <p>Müəllif</p>
+                </div>
+                <div class="stat">
+                    <h2>10K+</h2>
+                    <p>Oxucu</p>
+                </div>
+            </div>
+            
+            <hr>
+            
+            <h2 class="contact-title">Əlaqə</h2>
+            <div class="contact-item">
+                <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                <span>info@meqale.az</span>
+            </div>
+            <div class="contact-item">
+                <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                <span>+994 99 311 03 55</span>
+            </div>
+            <div class="contact-item">
+                <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
+                <span>Bakı, Azərbaycan</span>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>Məqalə</h2>
+                <p>Maraqlı məqalələri oxu və yeni məlumatlar kəşf et.</p>
+            </div>
+            <div class="footer-links">
+                <h3>🔗 Keçidlər</h3>
+                <a href="index.html">Ana Səhifə</a>
+                <a href="kateqoriya.html">Kateqoriyalar</a>
+                <a href="populyar.html">Populyar</a>
+                <a href="profil.html">Profil</a>
+                <a href="haqqimizda.html">Haqqımızda</a>
+            </div>
+            <div class="footer-contact">
+                <h3>📞 Əlaqə</h3>
+                <p>Email: aztu.meqale@gmail.com</p>
+                <p>Telefon: +994 50 111 22 33</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>2026 Məqalə Platforması | Bütün hüquqlar qorunur</p>
+        </div>
+    </footer>
+
+</body>
+</html>
